@@ -1,0 +1,57 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myStationLabel" jhiTranslate="epetrolstationbackendApp.station.home.createOrEditLabel">Create or edit a Station</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!station.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="station.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.station.code" for="field_code">Code</label>
+            <input type="text" class="form-control" name="code" id="field_code"
+                [(ngModel)]="station.code" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.station.denomination" for="field_denomination">Denomination</label>
+            <input type="text" class="form-control" name="denomination" id="field_denomination"
+                [(ngModel)]="station.denomination" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.station.telephone" for="field_telephone">Telephone</label>
+            <input type="text" class="form-control" name="telephone" id="field_telephone"
+                [(ngModel)]="station.telephone" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.station.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                [(ngModel)]="station.email" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.station.fax" for="field_fax">Fax</label>
+            <input type="text" class="form-control" name="fax" id="field_fax"
+                [(ngModel)]="station.fax" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.station.adresse" for="field_adresse">Adresse</label>
+            <select class="form-control" id="field_adresse" name="adresse" [(ngModel)]="station.adresseId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="adresseOption.id" *ngFor="let adresseOption of adresses; trackBy: trackAdresseById">{{adresseOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

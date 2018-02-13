@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Pompe.
+    -->
+    <changeSet id="20180213204009-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="hasci_id"
+                                 baseTableName="pompe"
+                                 constraintName="fk_pompe_hasci_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="citerne"/>
+
+        <addForeignKeyConstraint baseColumnNames="hasre_id"
+                                 baseTableName="pompe"
+                                 constraintName="fk_pompe_hasre_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="reservoir"/>
+
+        <addForeignKeyConstraint baseColumnNames="hasta_id"
+                                 baseTableName="pompe"
+                                 constraintName="fk_pompe_hasta_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="taux_melange"/>
+
+        <addForeignKeyConstraint baseColumnNames="hasca_id"
+                                 baseTableName="pompe"
+                                 constraintName="fk_pompe_hasca_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cat_carburant"/>
+
+    </changeSet>
+</databaseChangeLog>

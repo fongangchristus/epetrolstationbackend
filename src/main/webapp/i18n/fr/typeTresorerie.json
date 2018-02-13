@@ -1,0 +1,23 @@
+
+{
+    "epetrolstationbackendApp": {
+        "typeTresorerie" : {
+            "home": {
+                "title": "TypeTresoreries",
+                "createLabel": "Créer un nouveau Type Tresorerie",
+                "createOrEditLabel": "Créer ou éditer un Type Tresorerie"
+            },
+            "created": "Un nouveau Type Tresorerie a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Type Tresorerie avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Type Tresorerie avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Type Tresorerie {{ id }} ?"
+            },
+            "detail": {
+                "title": "Type Tresorerie"
+            },
+            "libele": "Libele",
+            "description": "Description"
+        }
+    }
+}

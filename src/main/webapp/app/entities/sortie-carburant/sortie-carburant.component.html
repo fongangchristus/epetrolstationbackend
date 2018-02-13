@@ -1,0 +1,98 @@
+<div>
+    <h2>
+        <span jhiTranslate="epetrolstationbackendApp.sortieCarburant.home.title">Sortie Carburants</span>
+        <button class="btn btn-primary float-right jh-create-entity create-sortie-carburant" [routerLink]="['/', { outlets: { popup: ['sortie-carburant-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="epetrolstationbackendApp.sortieCarburant.home.createLabel">
+            Create new Sortie Carburant
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="sortieCarburants">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.date">Date</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.prixTotalht">Prix Totalht</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.quantite">Quantite</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.quantiteINit">Quantite I Nit</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.quantiteFinal">Quantite Final</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.prixTTC">Prix TTC</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.inter">Inter</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.carb">Carb</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.pomp">Pomp</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.mode">Mode</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.tres">Tres</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sortieCarburant of sortieCarburants ;trackBy: trackId">
+                <td><a [routerLink]="['../sortie-carburant', sortieCarburant.id ]">{{sortieCarburant.id}}</a></td>
+                <td>{{sortieCarburant.date | date:'medium'}}</td>
+                <td>{{sortieCarburant.prixTotalht}}</td>
+                <td>{{sortieCarburant.quantite}}</td>
+                <td>{{sortieCarburant.quantiteINit}}</td>
+                <td>{{sortieCarburant.quantiteFinal}}</td>
+                <td>{{sortieCarburant.prixTTC}}</td>
+                <td>
+                    <div *ngIf="sortieCarburant.interId">
+                        <a [routerLink]="['../intervenant', sortieCarburant.interId  ]" >{{sortieCarburant.interId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sortieCarburant.carbId">
+                        <a [routerLink]="['../carburant', sortieCarburant.carbId  ]" >{{sortieCarburant.carbId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sortieCarburant.pompId">
+                        <a [routerLink]="['../pompe', sortieCarburant.pompId  ]" >{{sortieCarburant.pompId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sortieCarburant.modeId">
+                        <a [routerLink]="['../mode-reglement', sortieCarburant.modeId  ]" >{{sortieCarburant.modeId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sortieCarburant.tresId">
+                        <a [routerLink]="['../tresorerie', sortieCarburant.tresId  ]" >{{sortieCarburant.tresId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../sortie-carburant', sortieCarburant.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sortie-carburant/'+ sortieCarburant.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sortie-carburant/'+ sortieCarburant.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

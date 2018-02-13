@@ -1,0 +1,66 @@
+
+<div *ngIf="depense">
+    <h2><span jhiTranslate="epetrolstationbackendApp.depense.detail.title">Depense</span> {{depense.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="epetrolstationbackendApp.depense.date">Date</span></dt>
+        <dd>
+            <span>{{depense.date | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.depense.code">Code</span></dt>
+        <dd>
+            <span>{{depense.code}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.depense.designation">Designation</span></dt>
+        <dd>
+            <span>{{depense.designation}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.depense.description">Description</span></dt>
+        <dd>
+            <span>{{depense.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.depense.montant">Montant</span></dt>
+        <dd>
+            <span>{{depense.montant}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.depense.hastresro">Hastresro</span></dt>
+        <dd>
+            <div *ngIf="depense.hastresroId">
+                <a [routerLink]="['/tresorerie', depense.hastresroId]">{{depense.hastresroId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.depense.hasinterv">Hasinterv</span></dt>
+        <dd>
+            <div *ngIf="depense.hasintervId">
+                <a [routerLink]="['/intervenant', depense.hasintervId]">{{depense.hasintervId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.depense.use">Use</span></dt>
+        <dd>
+            <div *ngIf="depense.useId">
+                <a [routerLink]="['/categorie-depense', depense.useId]">{{depense.useId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.depense.has">Has</span></dt>
+        <dd>
+            <div *ngIf="depense.hasId">
+                <a [routerLink]="['/mode-reglement', depense.hasId]">{{depense.hasId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'depense/'+ depense.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

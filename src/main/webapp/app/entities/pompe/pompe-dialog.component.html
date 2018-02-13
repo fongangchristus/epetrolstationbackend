@@ -1,0 +1,68 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPompeLabel" jhiTranslate="epetrolstationbackendApp.pompe.home.createOrEditLabel">Create or edit a Pompe</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!pompe.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="pompe.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.pompe.nbChiffre" for="field_nbChiffre">Nb Chiffre</label>
+            <input type="text" class="form-control" name="nbChiffre" id="field_nbChiffre"
+                [(ngModel)]="pompe.nbChiffre" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.pompe.cInit" for="field_cInit">C Init</label>
+            <input type="text" class="form-control" name="cInit" id="field_cInit"
+                [(ngModel)]="pompe.cInit" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.pompe.melange" for="field_melange">Melange</label>
+            <input type="checkbox" class="form-control" name="melange" id="field_melange"
+                [(ngModel)]="pompe.melange" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.pompe.hasci" for="field_hasci">Hasci</label>
+            <select class="form-control" id="field_hasci" name="hasci" [(ngModel)]="pompe.hasciId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="citerneOption.id" *ngFor="let citerneOption of hascis; trackBy: trackCiterneById">{{citerneOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.pompe.hasre" for="field_hasre">Hasre</label>
+            <select class="form-control" id="field_hasre" name="hasre" [(ngModel)]="pompe.hasreId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="reservoirOption.id" *ngFor="let reservoirOption of hasres; trackBy: trackReservoirById">{{reservoirOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.pompe.hasta" for="field_hasta">Hasta</label>
+            <select class="form-control" id="field_hasta" name="hasta" [(ngModel)]="pompe.hastaId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tauxMelangeOption.id" *ngFor="let tauxMelangeOption of hastas; trackBy: trackTauxMelangeById">{{tauxMelangeOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.pompe.hasca" for="field_hasca">Hasca</label>
+            <select class="form-control" id="field_hasca" name="hasca" [(ngModel)]="pompe.hascaId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="catCarburantOption.id" *ngFor="let catCarburantOption of hascas; trackBy: trackCatCarburantById">{{catCarburantOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

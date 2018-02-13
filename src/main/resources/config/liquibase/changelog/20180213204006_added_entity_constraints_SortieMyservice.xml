@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity SortieMyservice.
+    -->
+    <changeSet id="20180213204006-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="serv_id"
+                                 baseTableName="sortie_myservice"
+                                 constraintName="fk_sortie_myservice_serv_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="myservice"/>
+
+        <addForeignKeyConstraint baseColumnNames="hasinter_id"
+                                 baseTableName="sortie_myservice"
+                                 constraintName="fk_sortie_myservice_hasinter_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="intervenant"/>
+
+        <addForeignKeyConstraint baseColumnNames="has_moder_id"
+                                 baseTableName="sortie_myservice"
+                                 constraintName="fk_sortie_myservice_has_moder_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mode_reglement"/>
+
+        <addForeignKeyConstraint baseColumnNames="hastresor_id"
+                                 baseTableName="sortie_myservice"
+                                 constraintName="fk_sortie_myservice_hastresor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tresorerie"/>
+
+        <addForeignKeyConstraint baseColumnNames="hastre_id"
+                                 baseTableName="sortie_myservice"
+                                 constraintName="fk_sortie_myservice_hastre_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tresorerie"/>
+
+    </changeSet>
+</databaseChangeLog>

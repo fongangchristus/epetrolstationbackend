@@ -1,0 +1,24 @@
+
+{
+    "epetrolstationbackendApp": {
+        "catCarburant" : {
+            "home": {
+                "title": "CatCarburants",
+                "createLabel": "Créer un nouveau Cat Carburant",
+                "createOrEditLabel": "Créer ou éditer un Cat Carburant"
+            },
+            "created": "Un nouveau Cat Carburant a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Cat Carburant avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Cat Carburant avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Cat Carburant {{ id }} ?"
+            },
+            "detail": {
+                "title": "Cat Carburant"
+            },
+            "libele": "Libele",
+            "description": "Description",
+            "has": "Has"
+        }
+    }
+}

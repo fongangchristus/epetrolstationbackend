@@ -1,0 +1,48 @@
+
+<div *ngIf="tresorerie">
+    <h2><span jhiTranslate="epetrolstationbackendApp.tresorerie.detail.title">Tresorerie</span> {{tresorerie.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="epetrolstationbackendApp.tresorerie.libele">Libele</span></dt>
+        <dd>
+            <span>{{tresorerie.libele}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.tresorerie.codeRib">Code Rib</span></dt>
+        <dd>
+            <span>{{tresorerie.codeRib}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.tresorerie.soldeReserve">Solde Reserve</span></dt>
+        <dd>
+            <span>{{tresorerie.soldeReserve}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.tresorerie.soldeOuverture">Solde Ouverture</span></dt>
+        <dd>
+            <span>{{tresorerie.soldeOuverture}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.tresorerie.chiffreComptable">Chiffre Comptable</span></dt>
+        <dd>
+            <span>{{tresorerie.chiffreComptable}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.tresorerie.hastypet">Hastypet</span></dt>
+        <dd>
+            <div *ngIf="tresorerie.hastypetId">
+                <a [routerLink]="['/type-tresorerie', tresorerie.hastypetId]">{{tresorerie.hastypetId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tresorerie/'+ tresorerie.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

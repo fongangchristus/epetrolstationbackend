@@ -1,0 +1,78 @@
+<div>
+    <h2>
+        <span jhiTranslate="epetrolstationbackendApp.citerne.home.title">Citernes</span>
+        <button class="btn btn-primary float-right jh-create-entity create-citerne" [routerLink]="['/', { outlets: { popup: ['citerne-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="epetrolstationbackendApp.citerne.home.createLabel">
+            Create new Citerne
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="citernes">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="volumeInit"><span jhiTranslate="epetrolstationbackendApp.citerne.volumeInit">Volume Init</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="volumeMax"><span jhiTranslate="epetrolstationbackendApp.citerne.volumeMax">Volume Max</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="hascId"><span jhiTranslate="epetrolstationbackendApp.citerne.hasc">Hasc</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="hasuId"><span jhiTranslate="epetrolstationbackendApp.citerne.hasu">Hasu</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="haiId"><span jhiTranslate="epetrolstationbackendApp.citerne.hai">Hai</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let citerne of citernes ;trackBy: trackId">
+                <td><a [routerLink]="['../citerne', citerne.id ]">{{citerne.id}}</a></td>
+                <td>{{citerne.volumeInit}}</td>
+                <td>{{citerne.volumeMax}}</td>
+                <td>
+                    <div *ngIf="citerne.hascId">
+                        <a [routerLink]="['../cat-carburant', citerne.hascId  ]" >{{citerne.hascId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="citerne.hasuId">
+                        <a [routerLink]="['../unite', citerne.hasuId  ]" >{{citerne.hasuId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="citerne.haiId">
+                        <a [routerLink]="['../station', citerne.haiId  ]" >{{citerne.haiId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../citerne', citerne.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'citerne/'+ citerne.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'citerne/'+ citerne.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

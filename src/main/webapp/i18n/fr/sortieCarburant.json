@@ -1,0 +1,32 @@
+
+{
+    "epetrolstationbackendApp": {
+        "sortieCarburant" : {
+            "home": {
+                "title": "SortieCarburants",
+                "createLabel": "Créer un nouveau Sortie Carburant",
+                "createOrEditLabel": "Créer ou éditer un Sortie Carburant"
+            },
+            "created": "Un nouveau Sortie Carburant a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Sortie Carburant avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Sortie Carburant avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Sortie Carburant {{ id }} ?"
+            },
+            "detail": {
+                "title": "Sortie Carburant"
+            },
+            "date": "Date",
+            "prixTotalht": "Prix Totalht",
+            "quantite": "Quantite",
+            "quantiteINit": "Quantite I Nit",
+            "quantiteFinal": "Quantite Final",
+            "prixTTC": "Prix TTC",
+            "inter": "Inter",
+            "carb": "Carb",
+            "pomp": "Pomp",
+            "mode": "Mode",
+            "tres": "Tres"
+        }
+    }
+}

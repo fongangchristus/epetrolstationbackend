@@ -1,0 +1,60 @@
+
+<div *ngIf="entreeProduit">
+    <h2><span jhiTranslate="epetrolstationbackendApp.entreeProduit.detail.title">Entree Produit</span> {{entreeProduit.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="epetrolstationbackendApp.entreeProduit.date">Date</span></dt>
+        <dd>
+            <span>{{entreeProduit.date | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.entreeProduit.motif">Motif</span></dt>
+        <dd>
+            <span>{{entreeProduit.motif}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.entreeProduit.prixTotalht">Prix Totalht</span></dt>
+        <dd>
+            <span>{{entreeProduit.prixTotalht}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.entreeProduit.quantite">Quantite</span></dt>
+        <dd>
+            <span>{{entreeProduit.quantite}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.entreeProduit.prixTTC">Prix TTC</span></dt>
+        <dd>
+            <span>{{entreeProduit.prixTTC}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.entreeProduit.modeR">Mode R</span></dt>
+        <dd>
+            <div *ngIf="entreeProduit.modeRId">
+                <a [routerLink]="['/mode-reglement', entreeProduit.modeRId]">{{entreeProduit.modeRId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.entreeProduit.tresorerie">Tresorerie</span></dt>
+        <dd>
+            <div *ngIf="entreeProduit.tresorerieId">
+                <a [routerLink]="['/tresorerie', entreeProduit.tresorerieId]">{{entreeProduit.tresorerieId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.entreeProduit.produit">Produit</span></dt>
+        <dd>
+            <div *ngIf="entreeProduit.produitId">
+                <a [routerLink]="['/produit', entreeProduit.produitId]">{{entreeProduit.produitId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'entree-produit/'+ entreeProduit.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,90 @@
+<div>
+    <h2>
+        <span jhiTranslate="epetrolstationbackendApp.depense.home.title">Depenses</span>
+        <button class="btn btn-primary float-right jh-create-entity create-depense" [routerLink]="['/', { outlets: { popup: ['depense-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="epetrolstationbackendApp.depense.home.createLabel">
+            Create new Depense
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="depenses">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.depense.date">Date</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.depense.code">Code</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.depense.designation">Designation</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.depense.description">Description</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.depense.montant">Montant</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.depense.hastresro">Hastresro</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.depense.hasinterv">Hasinterv</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.depense.use">Use</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.depense.has">Has</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let depense of depenses ;trackBy: trackId">
+                <td><a [routerLink]="['../depense', depense.id ]">{{depense.id}}</a></td>
+                <td>{{depense.date | date:'medium'}}</td>
+                <td>{{depense.code}}</td>
+                <td>{{depense.designation}}</td>
+                <td>{{depense.description}}</td>
+                <td>{{depense.montant}}</td>
+                <td>
+                    <div *ngIf="depense.hastresroId">
+                        <a [routerLink]="['../tresorerie', depense.hastresroId  ]" >{{depense.hastresroId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="depense.hasintervId">
+                        <a [routerLink]="['../intervenant', depense.hasintervId  ]" >{{depense.hasintervId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="depense.useId">
+                        <a [routerLink]="['../categorie-depense', depense.useId  ]" >{{depense.useId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="depense.hasId">
+                        <a [routerLink]="['../mode-reglement', depense.hasId  ]" >{{depense.hasId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../depense', depense.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'depense/'+ depense.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'depense/'+ depense.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

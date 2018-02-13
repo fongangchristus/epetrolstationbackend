@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "designation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "quantiteInit",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "quantiteMax",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "quantiteAlerte",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180213204010",
+    "entityTableName": "reservoir",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

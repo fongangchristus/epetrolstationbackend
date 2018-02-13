@@ -1,0 +1,29 @@
+
+{
+    "epetrolstationbackendApp": {
+        "entreeCarburant" : {
+            "home": {
+                "title": "EntreeCarburants",
+                "createLabel": "Créer un nouveau Entree Carburant",
+                "createOrEditLabel": "Créer ou éditer un Entree Carburant"
+            },
+            "created": "Un nouveau Entree Carburant a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Entree Carburant avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Entree Carburant avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Entree Carburant {{ id }} ?"
+            },
+            "detail": {
+                "title": "Entree Carburant"
+            },
+            "date": "Date",
+            "prixTotalht": "Prix Totalht",
+            "quantite": "Quantite",
+            "prixTTC": "Prix TTC",
+            "modeReglement": "Mode Reglement",
+            "carburant": "Carburant",
+            "tresorerie": "Tresorerie",
+            "pompiste": "Pompiste"
+        }
+    }
+}

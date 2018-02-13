@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "hastypet",
+            "otherEntityName": "typeTresorerie",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "tresorerie"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "libele",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codeRib",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soldeReserve",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soldeOuverture",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "chiffreComptable",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180213204013",
+    "entityTableName": "tresorerie",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

@@ -1,0 +1,62 @@
+<div>
+    <h2>
+        <span jhiTranslate="epetrolstationbackendApp.tauxMelange.home.title">Taux Melanges</span>
+        <button class="btn btn-primary float-right jh-create-entity create-taux-melange" [routerLink]="['/', { outlets: { popup: ['taux-melange-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="epetrolstationbackendApp.tauxMelange.home.createLabel">
+            Create new Taux Melange
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="tauxMelanges">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.tauxMelange.tauxMelange">Taux Melange</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.tauxMelange.prixMelange">Prix Melange</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.tauxMelange.tauxEnCours">Taux En Cours</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tauxMelange of tauxMelanges ;trackBy: trackId">
+                <td><a [routerLink]="['../taux-melange', tauxMelange.id ]">{{tauxMelange.id}}</a></td>
+                <td>{{tauxMelange.tauxMelange}}</td>
+                <td>{{tauxMelange.prixMelange}}</td>
+                <td>{{tauxMelange.tauxEnCours}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../taux-melange', tauxMelange.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'taux-melange/'+ tauxMelange.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'taux-melange/'+ tauxMelange.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

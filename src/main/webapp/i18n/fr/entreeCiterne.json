@@ -1,0 +1,28 @@
+
+{
+    "epetrolstationbackendApp": {
+        "entreeCiterne" : {
+            "home": {
+                "title": "EntreeCiternes",
+                "createLabel": "Créer un nouveau Entree Citerne",
+                "createOrEditLabel": "Créer ou éditer un Entree Citerne"
+            },
+            "created": "Un nouveau Entree Citerne a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Entree Citerne avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Entree Citerne avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Entree Citerne {{ id }} ?"
+            },
+            "detail": {
+                "title": "Entree Citerne"
+            },
+            "date": "Date",
+            "valeurMax": "Valeur Max",
+            "valeurActuel": "Valeur Actuel",
+            "quantite": "Quantite",
+            "hasciterne": "Hasciterne",
+            "hasunite": "Hasunite",
+            "hasi": "Hasi"
+        }
+    }
+}

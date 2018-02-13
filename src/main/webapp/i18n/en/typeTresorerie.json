@@ -1,0 +1,23 @@
+
+{
+    "epetrolstationbackendApp": {
+        "typeTresorerie" : {
+            "home": {
+                "title": "Type Tresoreries",
+                "createLabel": "Create a new Type Tresorerie",
+                "createOrEditLabel": "Create or edit a Type Tresorerie"
+            },
+            "created": "A new Type Tresorerie is created with identifier {{ param }}",
+            "updated": "A Type Tresorerie is updated with identifier {{ param }}",
+            "deleted": "A Type Tresorerie is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Type Tresorerie {{ id }}?"
+            },
+            "detail": {
+                "title": "Type Tresorerie"
+            },
+            "libele": "Libele",
+            "description": "Description"
+        }
+    }
+}

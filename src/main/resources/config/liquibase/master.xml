@@ -5,6 +5,48 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203948_added_entity_Produit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203949_added_entity_Tva.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203950_added_entity_Carburant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203951_added_entity_CatCarburant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203952_added_entity_Categorie.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203953_added_entity_EntreeProduit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203954_added_entity_SortieProduit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203955_added_entity_EntreeCarburant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203956_added_entity_SortieCarburant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203957_added_entity_Intervenant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203958_added_entity_TypeIntervenant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203959_added_entity_Station.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204000_added_entity_Adresse.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204001_added_entity_Unite.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204002_added_entity_ModeReglement.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204003_added_entity_Citerne.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204004_added_entity_EntreeCiterne.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204005_added_entity_Myservice.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204006_added_entity_SortieMyservice.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204007_added_entity_CategorieDepense.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204008_added_entity_Depense.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204009_added_entity_Pompe.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204010_added_entity_Reservoir.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204011_added_entity_TauxMelange.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204012_added_entity_FraisRecue.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204013_added_entity_Tresorerie.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204014_added_entity_TypeTresorerie.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180213203948_added_entity_constraints_Produit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203950_added_entity_constraints_Carburant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203953_added_entity_constraints_EntreeProduit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203954_added_entity_constraints_SortieProduit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203955_added_entity_constraints_EntreeCarburant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203956_added_entity_constraints_SortieCarburant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203957_added_entity_constraints_Intervenant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213203959_added_entity_constraints_Station.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204003_added_entity_constraints_Citerne.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204004_added_entity_constraints_EntreeCiterne.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204006_added_entity_constraints_SortieMyservice.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204008_added_entity_constraints_Depense.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204009_added_entity_constraints_Pompe.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204012_added_entity_constraints_FraisRecue.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180213204013_added_entity_constraints_Tresorerie.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

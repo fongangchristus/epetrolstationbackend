@@ -1,0 +1,29 @@
+
+{
+    "epetrolstationbackendApp": {
+        "sortieMyservice" : {
+            "home": {
+                "title": "SortieMyservices",
+                "createLabel": "Créer un nouveau Sortie Myservice",
+                "createOrEditLabel": "Créer ou éditer un Sortie Myservice"
+            },
+            "created": "Un nouveau Sortie Myservice a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Sortie Myservice avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Sortie Myservice avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Sortie Myservice {{ id }} ?"
+            },
+            "detail": {
+                "title": "Sortie Myservice"
+            },
+            "date": "Date",
+            "prixTotalht": "Prix Totalht",
+            "prixTTC": "Prix TTC",
+            "serv": "Serv",
+            "hasinter": "Hasinter",
+            "hasModeR": "Has Mode R",
+            "hastresor": "Hastresor",
+            "hastre": "Hastre"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "hasmany",
+            "otherEntityName": "produit",
+            "otherEntityRelationshipName": "categorie"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "libele",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180213203952",
+    "entityTableName": "categorie",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}
