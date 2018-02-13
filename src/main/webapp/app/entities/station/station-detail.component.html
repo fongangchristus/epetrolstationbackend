@@ -1,0 +1,48 @@
+
+<div *ngIf="station">
+    <h2><span jhiTranslate="epetrolstationbackendApp.station.detail.title">Station</span> {{station.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="epetrolstationbackendApp.station.code">Code</span></dt>
+        <dd>
+            <span>{{station.code}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.station.denomination">Denomination</span></dt>
+        <dd>
+            <span>{{station.denomination}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.station.telephone">Telephone</span></dt>
+        <dd>
+            <span>{{station.telephone}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.station.email">Email</span></dt>
+        <dd>
+            <span>{{station.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.station.fax">Fax</span></dt>
+        <dd>
+            <span>{{station.fax}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.station.adresse">Adresse</span></dt>
+        <dd>
+            <div *ngIf="station.adresseId">
+                <a [routerLink]="['/adresse', station.adresseId]">{{station.adresseId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'station/'+ station.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

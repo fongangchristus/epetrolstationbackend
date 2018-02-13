@@ -1,0 +1,59 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "modeReglement",
+            "otherEntityName": "modeReglement",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "entreeCarburant"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "carburant",
+            "otherEntityName": "carburant",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "entreeCarburant"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "tresorerie",
+            "otherEntityName": "tresorerie",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "entreeCarburant"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "pompiste",
+            "otherEntityName": "intervenant",
+            "otherEntityRelationshipName": "entreeCarburant"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "prixTotalht",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "quantite",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "prixTTC",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20180213190255",
+    "entityTableName": "entree_carburant",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

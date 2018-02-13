@@ -1,0 +1,59 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "tva",
+            "otherEntityName": "tva",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "produit"
+        },
+        {
+            "relationshipName": "categorie",
+            "otherEntityName": "categorie",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "designation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soldeInit",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "prixAchat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "prixVente",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "quantiteDispo",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "quantiteInit",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "seuilReaprov",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "reference",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20180213190248",
+    "entityTableName": "produit",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

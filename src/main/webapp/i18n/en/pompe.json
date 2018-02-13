@@ -1,0 +1,28 @@
+
+{
+    "epetrolstationbackendApp": {
+        "pompe" : {
+            "home": {
+                "title": "Pompes",
+                "createLabel": "Create a new Pompe",
+                "createOrEditLabel": "Create or edit a Pompe"
+            },
+            "created": "A new Pompe is created with identifier {{ param }}",
+            "updated": "A Pompe is updated with identifier {{ param }}",
+            "deleted": "A Pompe is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Pompe {{ id }}?"
+            },
+            "detail": {
+                "title": "Pompe"
+            },
+            "nbChiffre": "Nb Chiffre",
+            "cInit": "C Init",
+            "melange": "Melange",
+            "hasci": "Hasci",
+            "hasre": "Hasre",
+            "hasta": "Hasta",
+            "hasca": "Hasca"
+        }
+    }
+}

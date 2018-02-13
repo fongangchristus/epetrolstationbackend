@@ -1,0 +1,58 @@
+
+<div *ngIf="pompe">
+    <h2><span jhiTranslate="epetrolstationbackendApp.pompe.detail.title">Pompe</span> {{pompe.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="epetrolstationbackendApp.pompe.nbChiffre">Nb Chiffre</span></dt>
+        <dd>
+            <span>{{pompe.nbChiffre}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.pompe.cInit">C Init</span></dt>
+        <dd>
+            <span>{{pompe.cInit}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.pompe.melange">Melange</span></dt>
+        <dd>
+            <span>{{pompe.melange}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.pompe.hasci">Hasci</span></dt>
+        <dd>
+            <div *ngIf="pompe.hasciId">
+                <a [routerLink]="['/citerne', pompe.hasciId]">{{pompe.hasciId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.pompe.hasre">Hasre</span></dt>
+        <dd>
+            <div *ngIf="pompe.hasreId">
+                <a [routerLink]="['/reservoir', pompe.hasreId]">{{pompe.hasreId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.pompe.hasta">Hasta</span></dt>
+        <dd>
+            <div *ngIf="pompe.hastaId">
+                <a [routerLink]="['/taux-melange', pompe.hastaId]">{{pompe.hastaId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.pompe.hasca">Hasca</span></dt>
+        <dd>
+            <div *ngIf="pompe.hascaId">
+                <a [routerLink]="['/cat-carburant', pompe.hascaId]">{{pompe.hascaId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'pompe/'+ pompe.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

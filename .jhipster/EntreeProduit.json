@@ -1,0 +1,63 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "modeR",
+            "otherEntityName": "modeReglement",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "entreeProduit"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "tresorerie",
+            "otherEntityName": "tresorerie",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "entreeProduit"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "produit",
+            "otherEntityName": "produit",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "entreeProduit"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "commercial",
+            "otherEntityName": "intervenant",
+            "otherEntityRelationshipName": "entreeProduit"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "motif",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prixTotalht",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "quantite",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "prixTTC",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20180213190253",
+    "entityTableName": "entree_produit",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

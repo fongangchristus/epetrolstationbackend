@@ -1,0 +1,92 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="mySortieCarburantLabel" jhiTranslate="epetrolstationbackendApp.sortieCarburant.home.createOrEditLabel">Create or edit a Sortie Carburant</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!sortieCarburant.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="sortieCarburant.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.sortieCarburant.date" for="field_date">Date</label>
+            <div class="d-flex">
+                <input id="field_date" type="datetime-local" class="form-control" name="date" [(ngModel)]="sortieCarburant.date"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.sortieCarburant.prixTotalht" for="field_prixTotalht">Prix Totalht</label>
+            <input type="number" class="form-control" name="prixTotalht" id="field_prixTotalht"
+                [(ngModel)]="sortieCarburant.prixTotalht" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.sortieCarburant.quantite" for="field_quantite">Quantite</label>
+            <input type="number" class="form-control" name="quantite" id="field_quantite"
+                [(ngModel)]="sortieCarburant.quantite" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.sortieCarburant.quantiteINit" for="field_quantiteINit">Quantite I Nit</label>
+            <input type="number" class="form-control" name="quantiteINit" id="field_quantiteINit"
+                [(ngModel)]="sortieCarburant.quantiteINit" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.sortieCarburant.quantiteFinal" for="field_quantiteFinal">Quantite Final</label>
+            <input type="number" class="form-control" name="quantiteFinal" id="field_quantiteFinal"
+                [(ngModel)]="sortieCarburant.quantiteFinal" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.sortieCarburant.prixTTC" for="field_prixTTC">Prix TTC</label>
+            <input type="number" class="form-control" name="prixTTC" id="field_prixTTC"
+                [(ngModel)]="sortieCarburant.prixTTC" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.sortieCarburant.inter" for="field_inter">Inter</label>
+            <select class="form-control" id="field_inter" name="inter" [(ngModel)]="sortieCarburant.interId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="intervenantOption.id" *ngFor="let intervenantOption of inters; trackBy: trackIntervenantById">{{intervenantOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.sortieCarburant.carb" for="field_carb">Carb</label>
+            <select class="form-control" id="field_carb" name="carb" [(ngModel)]="sortieCarburant.carbId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="carburantOption.id" *ngFor="let carburantOption of carbs; trackBy: trackCarburantById">{{carburantOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.sortieCarburant.pomp" for="field_pomp">Pomp</label>
+            <select class="form-control" id="field_pomp" name="pomp" [(ngModel)]="sortieCarburant.pompId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="pompeOption.id" *ngFor="let pompeOption of pomps; trackBy: trackPompeById">{{pompeOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.sortieCarburant.mode" for="field_mode">Mode</label>
+            <select class="form-control" id="field_mode" name="mode" [(ngModel)]="sortieCarburant.modeId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="modeReglementOption.id" *ngFor="let modeReglementOption of modes; trackBy: trackModeReglementById">{{modeReglementOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.sortieCarburant.tres" for="field_tres">Tres</label>
+            <select class="form-control" id="field_tres" name="tres" [(ngModel)]="sortieCarburant.tresId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tresorerieOption.id" *ngFor="let tresorerieOption of tres; trackBy: trackTresorerieById">{{tresorerieOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

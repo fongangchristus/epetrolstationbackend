@@ -1,0 +1,77 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "inter",
+            "otherEntityName": "intervenant",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "sortieCarburant"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "carb",
+            "otherEntityName": "carburant",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "sortieCarburant"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "pomp",
+            "otherEntityName": "pompe",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "sortieCarburant"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "mode",
+            "otherEntityName": "modeReglement",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "sortieCarburant"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "tres",
+            "otherEntityName": "tresorerie",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "sortieCarburant"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "prixTotalht",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "quantite",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "quantiteINit",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "quantiteFinal",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "prixTTC",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20180213190256",
+    "entityTableName": "sortie_carburant",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

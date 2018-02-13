@@ -1,0 +1,66 @@
+
+<div *ngIf="sortieProduit">
+    <h2><span jhiTranslate="epetrolstationbackendApp.sortieProduit.detail.title">Sortie Produit</span> {{sortieProduit.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieProduit.date">Date</span></dt>
+        <dd>
+            <span>{{sortieProduit.date | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieProduit.motif">Motif</span></dt>
+        <dd>
+            <span>{{sortieProduit.motif}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieProduit.prixTotalht">Prix Totalht</span></dt>
+        <dd>
+            <span>{{sortieProduit.prixTotalht}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieProduit.quantite">Quantite</span></dt>
+        <dd>
+            <span>{{sortieProduit.quantite}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieProduit.prixTTC">Prix TTC</span></dt>
+        <dd>
+            <span>{{sortieProduit.prixTTC}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieProduit.modeReg">Mode Reg</span></dt>
+        <dd>
+            <div *ngIf="sortieProduit.modeRegId">
+                <a [routerLink]="['/mode-reglement', sortieProduit.modeRegId]">{{sortieProduit.modeRegId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieProduit.client">Client</span></dt>
+        <dd>
+            <div *ngIf="sortieProduit.clientId">
+                <a [routerLink]="['/intervenant', sortieProduit.clientId]">{{sortieProduit.clientId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieProduit.tresor">Tresor</span></dt>
+        <dd>
+            <div *ngIf="sortieProduit.tresorId">
+                <a [routerLink]="['/tresorerie', sortieProduit.tresorId]">{{sortieProduit.tresorId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieProduit.prod">Prod</span></dt>
+        <dd>
+            <div *ngIf="sortieProduit.prodId">
+                <a [routerLink]="['/produit', sortieProduit.prodId]">{{sortieProduit.prodId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'sortie-produit/'+ sortieProduit.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

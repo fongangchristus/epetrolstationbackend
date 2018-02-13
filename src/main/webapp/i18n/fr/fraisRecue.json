@@ -1,0 +1,24 @@
+
+{
+    "epetrolstationbackendApp": {
+        "fraisRecue" : {
+            "home": {
+                "title": "FraisRecues",
+                "createLabel": "Créer un nouveau Frais Recue",
+                "createOrEditLabel": "Créer ou éditer un Frais Recue"
+            },
+            "created": "Un nouveau Frais Recue a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Frais Recue avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Frais Recue avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Frais Recue {{ id }} ?"
+            },
+            "detail": {
+                "title": "Frais Recue"
+            },
+            "date": "Date",
+            "montant": "Montant",
+            "hastrr": "Hastrr"
+        }
+    }
+}

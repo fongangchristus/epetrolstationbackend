@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity SortieCarburant.
+    -->
+    <changeSet id="20180213190256-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="inter_id"
+                                 baseTableName="sortie_carburant"
+                                 constraintName="fk_sortie_carburant_inter_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="intervenant"/>
+
+        <addForeignKeyConstraint baseColumnNames="carb_id"
+                                 baseTableName="sortie_carburant"
+                                 constraintName="fk_sortie_carburant_carb_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="carburant"/>
+
+        <addForeignKeyConstraint baseColumnNames="pomp_id"
+                                 baseTableName="sortie_carburant"
+                                 constraintName="fk_sortie_carburant_pomp_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pompe"/>
+
+        <addForeignKeyConstraint baseColumnNames="mode_id"
+                                 baseTableName="sortie_carburant"
+                                 constraintName="fk_sortie_carburant_mode_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mode_reglement"/>
+
+        <addForeignKeyConstraint baseColumnNames="tres_id"
+                                 baseTableName="sortie_carburant"
+                                 constraintName="fk_sortie_carburant_tres_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tresorerie"/>
+
+    </changeSet>
+</databaseChangeLog>

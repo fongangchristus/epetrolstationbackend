@@ -1,0 +1,29 @@
+
+{
+    "epetrolstationbackendApp": {
+        "sortieMyservice" : {
+            "home": {
+                "title": "Sortie Myservices",
+                "createLabel": "Create a new Sortie Myservice",
+                "createOrEditLabel": "Create or edit a Sortie Myservice"
+            },
+            "created": "A new Sortie Myservice is created with identifier {{ param }}",
+            "updated": "A Sortie Myservice is updated with identifier {{ param }}",
+            "deleted": "A Sortie Myservice is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Sortie Myservice {{ id }}?"
+            },
+            "detail": {
+                "title": "Sortie Myservice"
+            },
+            "date": "Date",
+            "prixTotalht": "Prix Totalht",
+            "prixTTC": "Prix TTC",
+            "serv": "Serv",
+            "hasinter": "Hasinter",
+            "hasModeR": "Has Mode R",
+            "hastresor": "Hastresor",
+            "hastre": "Hastre"
+        }
+    }
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Intervenant.
+    -->
+    <changeSet id="20180213190257-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="entree_produit_id"
+                                 baseTableName="intervenant"
+                                 constraintName="fk_intervenant_entree_produit_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="entree_produit"/>
+
+        <addForeignKeyConstraint baseColumnNames="entree_carburant_id"
+                                 baseTableName="intervenant"
+                                 constraintName="fk_intervenant_entree_carburant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="entree_carburant"/>
+
+        <addForeignKeyConstraint baseColumnNames="manager_id"
+                                 baseTableName="intervenant"
+                                 constraintName="fk_intervenant_manager_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="intervenant"/>
+
+        <addForeignKeyConstraint baseColumnNames="type_intervenant_id"
+                                 baseTableName="intervenant"
+                                 constraintName="fk_intervenant_type_intervenant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="type_intervenant"/>
+
+        <addForeignKeyConstraint baseColumnNames="is_id"
+                                 baseTableName="intervenant"
+                                 constraintName="fk_intervenant_is_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="station_id"
+                                 baseTableName="intervenant"
+                                 constraintName="fk_intervenant_station_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="station"/>
+
+    </changeSet>
+</databaseChangeLog>

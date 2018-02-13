@@ -1,0 +1,30 @@
+
+{
+    "epetrolstationbackendApp": {
+        "sortieProduit" : {
+            "home": {
+                "title": "SortieProduits",
+                "createLabel": "Créer un nouveau Sortie Produit",
+                "createOrEditLabel": "Créer ou éditer un Sortie Produit"
+            },
+            "created": "Un nouveau Sortie Produit a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Sortie Produit avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Sortie Produit avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Sortie Produit {{ id }} ?"
+            },
+            "detail": {
+                "title": "Sortie Produit"
+            },
+            "date": "Date",
+            "motif": "Motif",
+            "prixTotalht": "Prix Totalht",
+            "quantite": "Quantite",
+            "prixTTC": "Prix TTC",
+            "modeReg": "Mode Reg",
+            "client": "Client",
+            "tresor": "Tresor",
+            "prod": "Prod"
+        }
+    }
+}

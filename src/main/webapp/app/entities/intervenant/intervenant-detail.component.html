@@ -1,0 +1,84 @@
+
+<div *ngIf="intervenant">
+    <h2><span jhiTranslate="epetrolstationbackendApp.intervenant.detail.title">Intervenant</span> {{intervenant.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="epetrolstationbackendApp.intervenant.imageFile">Image File</span></dt>
+        <dd>
+            <span>{{intervenant.imageFile}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.intervenant.nomComplet">Nom Complet</span></dt>
+        <dd>
+            <span>{{intervenant.nomComplet}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.intervenant.fonction">Fonction</span></dt>
+        <dd>
+            <span>{{intervenant.fonction}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.intervenant.cni">Cni</span></dt>
+        <dd>
+            <span>{{intervenant.cni}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.intervenant.tel">Tel</span></dt>
+        <dd>
+            <span>{{intervenant.tel}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.intervenant.addresse">Addresse</span></dt>
+        <dd>
+            <span>{{intervenant.addresse}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.intervenant.soldeInit">Solde Init</span></dt>
+        <dd>
+            <span>{{intervenant.soldeInit}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.intervenant.entreeProduit">Entree Produit</span></dt>
+        <dd>
+            <div *ngIf="intervenant.entreeProduitId">
+                <a [routerLink]="['/entree-produit', intervenant.entreeProduitId]">{{intervenant.entreeProduitId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.intervenant.entreeCarburant">Entree Carburant</span></dt>
+        <dd>
+            <div *ngIf="intervenant.entreeCarburantId">
+                <a [routerLink]="['/entree-carburant', intervenant.entreeCarburantId]">{{intervenant.entreeCarburantId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.intervenant.manager">Manager</span></dt>
+        <dd>
+            <div *ngIf="intervenant.managerId">
+                <a [routerLink]="['/intervenant', intervenant.managerId]">{{intervenant.managerId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.intervenant.typeIntervenant">Type Intervenant</span></dt>
+        <dd>
+            <div *ngIf="intervenant.typeIntervenantId">
+                <a [routerLink]="['/type-intervenant', intervenant.typeIntervenantId]">{{intervenant.typeIntervenantId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.intervenant.is">Is</span></dt>
+        <dd>
+            {{intervenant.isId}}
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.intervenant.station">Station</span></dt>
+        <dd>
+            <div *ngIf="intervenant.stationId">
+                <a [routerLink]="['/station', intervenant.stationId]">{{intervenant.stationId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'intervenant/'+ intervenant.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

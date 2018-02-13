@@ -1,0 +1,23 @@
+
+{
+    "epetrolstationbackendApp": {
+        "categorieDepense" : {
+            "home": {
+                "title": "Categorie Depenses",
+                "createLabel": "Create a new Categorie Depense",
+                "createOrEditLabel": "Create or edit a Categorie Depense"
+            },
+            "created": "A new Categorie Depense is created with identifier {{ param }}",
+            "updated": "A Categorie Depense is updated with identifier {{ param }}",
+            "deleted": "A Categorie Depense is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Categorie Depense {{ id }}?"
+            },
+            "detail": {
+                "title": "Categorie Depense"
+            },
+            "libele": "Libele",
+            "description": "Description"
+        }
+    }
+}

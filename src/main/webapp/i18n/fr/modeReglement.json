@@ -1,0 +1,23 @@
+
+{
+    "epetrolstationbackendApp": {
+        "modeReglement" : {
+            "home": {
+                "title": "ModeReglements",
+                "createLabel": "Créer un nouveau Mode Reglement",
+                "createOrEditLabel": "Créer ou éditer un Mode Reglement"
+            },
+            "created": "Un nouveau Mode Reglement a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Mode Reglement avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Mode Reglement avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Mode Reglement {{ id }} ?"
+            },
+            "detail": {
+                "title": "Mode Reglement"
+            },
+            "code": "Code",
+            "libele": "Libele"
+        }
+    }
+}

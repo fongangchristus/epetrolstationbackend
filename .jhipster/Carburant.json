@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "catCarburant",
+            "otherEntityName": "catCarburant",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "designation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soldeInit",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "prixAchat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "prixVente",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "reference",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20180213190250",
+    "entityTableName": "carburant",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

@@ -1,0 +1,27 @@
+
+{
+    "epetrolstationbackendApp": {
+        "tresorerie" : {
+            "home": {
+                "title": "Tresoreries",
+                "createLabel": "Create a new Tresorerie",
+                "createOrEditLabel": "Create or edit a Tresorerie"
+            },
+            "created": "A new Tresorerie is created with identifier {{ param }}",
+            "updated": "A Tresorerie is updated with identifier {{ param }}",
+            "deleted": "A Tresorerie is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tresorerie {{ id }}?"
+            },
+            "detail": {
+                "title": "Tresorerie"
+            },
+            "libele": "Libele",
+            "codeRib": "Code Rib",
+            "soldeReserve": "Solde Reserve",
+            "soldeOuverture": "Solde Ouverture",
+            "chiffreComptable": "Chiffre Comptable",
+            "hastypet": "Hastypet"
+        }
+    }
+}

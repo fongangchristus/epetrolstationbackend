@@ -1,0 +1,24 @@
+
+{
+    "epetrolstationbackendApp": {
+        "fraisRecue" : {
+            "home": {
+                "title": "Frais Recues",
+                "createLabel": "Create a new Frais Recue",
+                "createOrEditLabel": "Create or edit a Frais Recue"
+            },
+            "created": "A new Frais Recue is created with identifier {{ param }}",
+            "updated": "A Frais Recue is updated with identifier {{ param }}",
+            "deleted": "A Frais Recue is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Frais Recue {{ id }}?"
+            },
+            "detail": {
+                "title": "Frais Recue"
+            },
+            "date": "Date",
+            "montant": "Montant",
+            "hastrr": "Hastrr"
+        }
+    }
+}
