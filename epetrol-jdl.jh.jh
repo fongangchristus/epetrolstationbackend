@@ -1,0 +1,234 @@
+
+entity Produit {
+	designation String,
+    soldeInit Double,
+    prixAchat Double,
+    prixVente Double,
+    quantiteDispo Double,
+    quantiteInit Double,
+    seuilReaprov Double,
+    reference Double
+}
+entity Tva {
+	modeTva String,
+    tauxTva String
+}
+entity Carburant {
+	designation String,
+    soldeInit Double,
+    prixAchat Double,
+    prixVente Double,
+    reference Double
+}
+entity CatCarburant {
+	libele String,
+    description String
+}  
+entity Categorie {
+	libele String,
+    description String
+}
+
+entity EntreeProduit {
+	date ZonedDateTime,
+    motif String,
+    prixTotalht Double,
+    quantite Double,
+	prixTTC Double
+}
+entity SortieProduit {
+	date ZonedDateTime,
+    motif String,
+    prixTotalht Double,
+    quantite Double,
+	prixTTC Double
+}
+entity EntreeCarburant {
+	date ZonedDateTime,
+    prixTotalht Double,
+    quantite Double,
+	prixTTC Double
+}
+entity SortieCarburant {
+	date ZonedDateTime,
+    prixTotalht Double,
+    quantite Double,
+    quantiteINit Double,
+    quantiteFinal Double,
+	prixTTC Double
+}
+entity Intervenant {
+	imageFile String,
+    nomComplet String,
+    fonction String,
+    cni String,
+    tel String,
+    addresse String,
+    soldeInit String
+}
+//enum TypeIntervenant {
+//    POMPISTE, CLIENT, FOURNISSEUR, RESPONSABLE, SUPERVISEUR
+//}
+
+entity TypeIntervenant {
+    libele String,
+	description String
+}
+
+entity Station {
+	code String,
+    denomination String,
+    telephone String,
+    email String,
+    fax String
+}
+entity Adresse {
+	pays String,
+    region String,
+    ville String,
+    quartier String,
+    codePostal String
+}
+
+entity Unite {
+	libele String,
+    abreviation String,
+    equivEnLitre String
+}
+entity ModeReglement {
+	code String,
+    libele String
+}
+
+entity Citerne {
+	volumeInit String,
+    volumeMax String
+}
+entity EntreeCiterne {
+	date ZonedDateTime,
+	valeurMax String,
+    valeurActuel String,
+    quantite String
+}
+entity Myservice {
+	libele String,
+    description String
+}
+entity SortieMyservice {
+	date ZonedDateTime,
+    prixTotalht Double,
+	prixTTC Double
+}
+entity CategorieDepense {
+	libele String,
+    description String
+}
+entity Depense {
+	date ZonedDateTime,
+	code String,
+    designation String,
+    description String,
+    montant Double
+}
+
+entity Pompe {
+	nbChiffre String,
+    cInit String,
+    melange Boolean
+}
+
+entity Reservoir {
+	designation String,
+    quantiteInit String,
+    quantiteMax String,
+    quantiteAlerte String
+}
+entity TauxMelange {
+	tauxMelange Double,
+    prixMelange Double,
+    tauxEnCours Boolean
+}
+
+entity FraisRecue {
+	date ZonedDateTime,
+    montant Double
+}
+entity Tresorerie {
+	libele String,
+    codeRib String,
+    soldeReserve String,
+    soldeOuverture String,
+    chiffreComptable String
+}
+entity TypeTresorerie{
+	libele String,
+    description String
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+    CatCarburant{has} to Carburant,   
+	Station{intervenant} to Intervenant,
+    EntreeCarburant{pompiste} to Intervenant,
+    EntreeProduit{commercial} to Intervenant,
+	Categorie{hasmany} to Produit
+}
+
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+	Intervenant{manager} to Intervenant,
+    Intervenant{typeIntervenant} to TypeIntervenant,
+	Intervenant{is} to User,
+    Station{adresse} to Adresse,
+    Produit{tva} to Tva,
+    EntreeCarburant{modeReglement} to ModeReglement,
+    EntreeCarburant{carburant} to Carburant,
+    EntreeCarburant{tresorerie} to Tresorerie,
+    EntreeProduit{modeR} to ModeReglement,
+    EntreeProduit{tresorerie} to Tresorerie,
+    EntreeProduit{produit} to Produit,
+    SortieProduit{modeReg} to ModeReglement,
+    SortieProduit{client} to Intervenant,
+    SortieProduit{tresor} to Tresorerie,
+    SortieProduit{prod} to Produit,
+    SortieCarburant{inter} to Intervenant,
+    SortieCarburant{carb} to Carburant,
+    SortieCarburant{pomp} to Pompe,
+    SortieCarburant{mode} to ModeReglement,
+    SortieCarburant{tres} to Tresorerie,
+    SortieMyservice{serv} to Myservice,
+    SortieMyservice{hasinter} to Intervenant,
+    SortieMyservice{hasModeR} to ModeReglement,
+    SortieMyservice{hastresor} to Tresorerie,
+    EntreeCiterne{hasciterne} to Citerne,
+    EntreeCiterne{hasunite} to Unite,
+    EntreeCiterne{hasi } to Intervenant,
+    Citerne{hasc} to CatCarburant,
+    Citerne{hasu} to Unite,
+    Citerne{hai} to Station,
+    Pompe{hasci} to Citerne,
+    Pompe{hasre}to Reservoir,
+    Pompe{hasta} to TauxMelange,
+    Pompe{hasca} to CatCarburant,
+    Tresorerie{hastypet} to TypeTresorerie,
+    SortieMyservice{hastre} to Tresorerie,
+    Depense{hastresro} to Tresorerie,
+    Depense {hasinterv}to Intervenant,
+    Depense{use} to CategorieDepense,
+    Depense{has} to ModeReglement,
+    FraisRecue{hastrr} to Tresorerie
+}
+
+
+
+// Set pagination options
+paginate Citerne, Intervenant with infinite-scroll
+paginate Produit with pagination
+
+dto * with mapstruct
+// Set Myservice options to all except few
+service all with serviceImpl 
+// Set an angular suffix
+//angularSuffix * with my
