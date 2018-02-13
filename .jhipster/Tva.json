@@ -1,0 +1,20 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "modeTva",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tauxTva",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180213203949",
+    "entityTableName": "tva",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

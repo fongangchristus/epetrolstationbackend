@@ -1,0 +1,86 @@
+<div>
+    <h2>
+        <span jhiTranslate="epetrolstationbackendApp.pompe.home.title">Pompes</span>
+        <button class="btn btn-primary float-right jh-create-entity create-pompe" [routerLink]="['/', { outlets: { popup: ['pompe-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="epetrolstationbackendApp.pompe.home.createLabel">
+            Create new Pompe
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="pompes">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.pompe.nbChiffre">Nb Chiffre</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.pompe.cInit">C Init</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.pompe.melange">Melange</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.pompe.hasci">Hasci</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.pompe.hasre">Hasre</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.pompe.hasta">Hasta</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.pompe.hasca">Hasca</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let pompe of pompes ;trackBy: trackId">
+                <td><a [routerLink]="['../pompe', pompe.id ]">{{pompe.id}}</a></td>
+                <td>{{pompe.nbChiffre}}</td>
+                <td>{{pompe.cInit}}</td>
+                <td>{{pompe.melange}}</td>
+                <td>
+                    <div *ngIf="pompe.hasciId">
+                        <a [routerLink]="['../citerne', pompe.hasciId  ]" >{{pompe.hasciId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="pompe.hasreId">
+                        <a [routerLink]="['../reservoir', pompe.hasreId  ]" >{{pompe.hasreId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="pompe.hastaId">
+                        <a [routerLink]="['../taux-melange', pompe.hastaId  ]" >{{pompe.hastaId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="pompe.hascaId">
+                        <a [routerLink]="['../cat-carburant', pompe.hascaId  ]" >{{pompe.hascaId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../pompe', pompe.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'pompe/'+ pompe.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'pompe/'+ pompe.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

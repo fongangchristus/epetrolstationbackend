@@ -1,0 +1,30 @@
+
+{
+    "epetrolstationbackendApp": {
+        "depense" : {
+            "home": {
+                "title": "Depenses",
+                "createLabel": "Créer un nouveau Depense",
+                "createOrEditLabel": "Créer ou éditer un Depense"
+            },
+            "created": "Un nouveau Depense a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Depense avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Depense avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Depense {{ id }} ?"
+            },
+            "detail": {
+                "title": "Depense"
+            },
+            "date": "Date",
+            "code": "Code",
+            "designation": "Designation",
+            "description": "Description",
+            "montant": "Montant",
+            "hastresro": "Hastresro",
+            "hasinterv": "Hasinterv",
+            "use": "Use",
+            "has": "Has"
+        }
+    }
+}

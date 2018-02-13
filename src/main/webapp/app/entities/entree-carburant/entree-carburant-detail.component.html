@@ -1,0 +1,56 @@
+
+<div *ngIf="entreeCarburant">
+    <h2><span jhiTranslate="epetrolstationbackendApp.entreeCarburant.detail.title">Entree Carburant</span> {{entreeCarburant.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="epetrolstationbackendApp.entreeCarburant.date">Date</span></dt>
+        <dd>
+            <span>{{entreeCarburant.date | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.entreeCarburant.prixTotalht">Prix Totalht</span></dt>
+        <dd>
+            <span>{{entreeCarburant.prixTotalht}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.entreeCarburant.quantite">Quantite</span></dt>
+        <dd>
+            <span>{{entreeCarburant.quantite}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.entreeCarburant.prixTTC">Prix TTC</span></dt>
+        <dd>
+            <span>{{entreeCarburant.prixTTC}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.entreeCarburant.modeReglement">Mode Reglement</span></dt>
+        <dd>
+            <div *ngIf="entreeCarburant.modeReglementId">
+                <a [routerLink]="['/mode-reglement', entreeCarburant.modeReglementId]">{{entreeCarburant.modeReglementId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.entreeCarburant.carburant">Carburant</span></dt>
+        <dd>
+            <div *ngIf="entreeCarburant.carburantId">
+                <a [routerLink]="['/carburant', entreeCarburant.carburantId]">{{entreeCarburant.carburantId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.entreeCarburant.tresorerie">Tresorerie</span></dt>
+        <dd>
+            <div *ngIf="entreeCarburant.tresorerieId">
+                <a [routerLink]="['/tresorerie', entreeCarburant.tresorerieId]">{{entreeCarburant.tresorerieId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'entree-carburant/'+ entreeCarburant.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,30 @@
+
+{
+    "epetrolstationbackendApp": {
+        "entreeProduit" : {
+            "home": {
+                "title": "Entree Produits",
+                "createLabel": "Create a new Entree Produit",
+                "createOrEditLabel": "Create or edit a Entree Produit"
+            },
+            "created": "A new Entree Produit is created with identifier {{ param }}",
+            "updated": "A Entree Produit is updated with identifier {{ param }}",
+            "deleted": "A Entree Produit is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Entree Produit {{ id }}?"
+            },
+            "detail": {
+                "title": "Entree Produit"
+            },
+            "date": "Date",
+            "motif": "Motif",
+            "prixTotalht": "Prix Totalht",
+            "quantite": "Quantite",
+            "prixTTC": "Prix TTC",
+            "modeR": "Mode R",
+            "tresorerie": "Tresorerie",
+            "produit": "Produit",
+            "commercial": "Commercial"
+        }
+    }
+}

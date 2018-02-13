@@ -1,0 +1,23 @@
+
+{
+    "epetrolstationbackendApp": {
+        "categorieDepense" : {
+            "home": {
+                "title": "CategorieDepenses",
+                "createLabel": "Créer un nouveau Categorie Depense",
+                "createOrEditLabel": "Créer ou éditer un Categorie Depense"
+            },
+            "created": "Un nouveau Categorie Depense a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Categorie Depense avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Categorie Depense avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Categorie Depense {{ id }} ?"
+            },
+            "detail": {
+                "title": "Categorie Depense"
+            },
+            "libele": "Libele",
+            "description": "Description"
+        }
+    }
+}

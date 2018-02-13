@@ -1,0 +1,25 @@
+
+{
+    "epetrolstationbackendApp": {
+        "reservoir" : {
+            "home": {
+                "title": "Reservoirs",
+                "createLabel": "Create a new Reservoir",
+                "createOrEditLabel": "Create or edit a Reservoir"
+            },
+            "created": "A new Reservoir is created with identifier {{ param }}",
+            "updated": "A Reservoir is updated with identifier {{ param }}",
+            "deleted": "A Reservoir is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Reservoir {{ id }}?"
+            },
+            "detail": {
+                "title": "Reservoir"
+            },
+            "designation": "Designation",
+            "quantiteInit": "Quantite Init",
+            "quantiteMax": "Quantite Max",
+            "quantiteAlerte": "Quantite Alerte"
+        }
+    }
+}

@@ -1,0 +1,32 @@
+
+{
+    "epetrolstationbackendApp": {
+        "sortieCarburant" : {
+            "home": {
+                "title": "Sortie Carburants",
+                "createLabel": "Create a new Sortie Carburant",
+                "createOrEditLabel": "Create or edit a Sortie Carburant"
+            },
+            "created": "A new Sortie Carburant is created with identifier {{ param }}",
+            "updated": "A Sortie Carburant is updated with identifier {{ param }}",
+            "deleted": "A Sortie Carburant is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Sortie Carburant {{ id }}?"
+            },
+            "detail": {
+                "title": "Sortie Carburant"
+            },
+            "date": "Date",
+            "prixTotalht": "Prix Totalht",
+            "quantite": "Quantite",
+            "quantiteINit": "Quantite I Nit",
+            "quantiteFinal": "Quantite Final",
+            "prixTTC": "Prix TTC",
+            "inter": "Inter",
+            "carb": "Carb",
+            "pomp": "Pomp",
+            "mode": "Mode",
+            "tres": "Tres"
+        }
+    }
+}

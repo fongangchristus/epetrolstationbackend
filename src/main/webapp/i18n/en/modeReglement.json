@@ -1,0 +1,23 @@
+
+{
+    "epetrolstationbackendApp": {
+        "modeReglement" : {
+            "home": {
+                "title": "Mode Reglements",
+                "createLabel": "Create a new Mode Reglement",
+                "createOrEditLabel": "Create or edit a Mode Reglement"
+            },
+            "created": "A new Mode Reglement is created with identifier {{ param }}",
+            "updated": "A Mode Reglement is updated with identifier {{ param }}",
+            "deleted": "A Mode Reglement is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Mode Reglement {{ id }}?"
+            },
+            "detail": {
+                "title": "Mode Reglement"
+            },
+            "code": "Code",
+            "libele": "Libele"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+
+{
+    "epetrolstationbackendApp": {
+        "station" : {
+            "home": {
+                "title": "Stations",
+                "createLabel": "Créer un nouveau Station",
+                "createOrEditLabel": "Créer ou éditer un Station"
+            },
+            "created": "Un nouveau Station a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Station avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Station avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Station {{ id }} ?"
+            },
+            "detail": {
+                "title": "Station"
+            },
+            "code": "Code",
+            "denomination": "Denomination",
+            "telephone": "Telephone",
+            "email": "Email",
+            "fax": "Fax",
+            "adresse": "Adresse",
+            "intervenant": "Intervenant"
+        }
+    }
+}

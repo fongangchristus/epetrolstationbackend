@@ -1,0 +1,23 @@
+
+{
+    "epetrolstationbackendApp": {
+        "myservice" : {
+            "home": {
+                "title": "Myservices",
+                "createLabel": "Créer un nouveau Myservice",
+                "createOrEditLabel": "Créer ou éditer un Myservice"
+            },
+            "created": "Un nouveau Myservice a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Myservice avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Myservice avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Myservice {{ id }} ?"
+            },
+            "detail": {
+                "title": "Myservice"
+            },
+            "libele": "Libele",
+            "description": "Description"
+        }
+    }
+}

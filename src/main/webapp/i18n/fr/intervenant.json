@@ -1,0 +1,34 @@
+
+{
+    "epetrolstationbackendApp": {
+        "intervenant" : {
+            "home": {
+                "title": "Intervenants",
+                "createLabel": "Créer un nouveau Intervenant",
+                "createOrEditLabel": "Créer ou éditer un Intervenant"
+            },
+            "created": "Un nouveau Intervenant a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Intervenant avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Intervenant avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Intervenant {{ id }} ?"
+            },
+            "detail": {
+                "title": "Intervenant"
+            },
+            "imageFile": "Image File",
+            "nomComplet": "Nom Complet",
+            "fonction": "Fonction",
+            "cni": "Cni",
+            "tel": "Tel",
+            "addresse": "Addresse",
+            "soldeInit": "Solde Init",
+            "entreeProduit": "Entree Produit",
+            "entreeCarburant": "Entree Carburant",
+            "manager": "Manager",
+            "typeIntervenant": "Type Intervenant",
+            "is": "Is",
+            "station": "Station"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "libele",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "abreviation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "equivEnLitre",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180213204001",
+    "entityTableName": "unite",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

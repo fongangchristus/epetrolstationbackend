@@ -1,0 +1,57 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "hasci",
+            "otherEntityName": "citerne",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "pompe"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "hasre",
+            "otherEntityName": "reservoir",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "pompe"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "hasta",
+            "otherEntityName": "tauxMelange",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "pompe"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "hasca",
+            "otherEntityName": "catCarburant",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "pompe"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nbChiffre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cInit",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "melange",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20180213204009",
+    "entityTableName": "pompe",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

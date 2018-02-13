@@ -1,0 +1,30 @@
+
+<div *ngIf="typeTresorerie">
+    <h2><span jhiTranslate="epetrolstationbackendApp.typeTresorerie.detail.title">Type Tresorerie</span> {{typeTresorerie.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="epetrolstationbackendApp.typeTresorerie.libele">Libele</span></dt>
+        <dd>
+            <span>{{typeTresorerie.libele}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.typeTresorerie.description">Description</span></dt>
+        <dd>
+            <span>{{typeTresorerie.description}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'type-tresorerie/'+ typeTresorerie.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

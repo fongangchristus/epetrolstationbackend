@@ -1,0 +1,92 @@
+<div>
+    <h2>
+        <span jhiTranslate="epetrolstationbackendApp.sortieMyservice.home.title">Sortie Myservices</span>
+        <button class="btn btn-primary float-right jh-create-entity create-sortie-myservice" [routerLink]="['/', { outlets: { popup: ['sortie-myservice-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="epetrolstationbackendApp.sortieMyservice.home.createLabel">
+            Create new Sortie Myservice
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="sortieMyservices">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieMyservice.date">Date</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieMyservice.prixTotalht">Prix Totalht</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieMyservice.prixTTC">Prix TTC</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieMyservice.serv">Serv</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieMyservice.hasinter">Hasinter</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieMyservice.hasModeR">Has Mode R</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieMyservice.hastresor">Hastresor</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieMyservice.hastre">Hastre</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sortieMyservice of sortieMyservices ;trackBy: trackId">
+                <td><a [routerLink]="['../sortie-myservice', sortieMyservice.id ]">{{sortieMyservice.id}}</a></td>
+                <td>{{sortieMyservice.date | date:'medium'}}</td>
+                <td>{{sortieMyservice.prixTotalht}}</td>
+                <td>{{sortieMyservice.prixTTC}}</td>
+                <td>
+                    <div *ngIf="sortieMyservice.servId">
+                        <a [routerLink]="['../myservice', sortieMyservice.servId  ]" >{{sortieMyservice.servId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sortieMyservice.hasinterId">
+                        <a [routerLink]="['../intervenant', sortieMyservice.hasinterId  ]" >{{sortieMyservice.hasinterId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sortieMyservice.hasModeRId">
+                        <a [routerLink]="['../mode-reglement', sortieMyservice.hasModeRId  ]" >{{sortieMyservice.hasModeRId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sortieMyservice.hastresorId">
+                        <a [routerLink]="['../tresorerie', sortieMyservice.hastresorId  ]" >{{sortieMyservice.hastresorId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sortieMyservice.hastreId">
+                        <a [routerLink]="['../tresorerie', sortieMyservice.hastreId  ]" >{{sortieMyservice.hastreId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../sortie-myservice', sortieMyservice.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sortie-myservice/'+ sortieMyservice.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sortie-myservice/'+ sortieMyservice.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

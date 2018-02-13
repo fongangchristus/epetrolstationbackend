@@ -1,0 +1,24 @@
+
+{
+    "epetrolstationbackendApp": {
+        "tauxMelange" : {
+            "home": {
+                "title": "TauxMelanges",
+                "createLabel": "Créer un nouveau Taux Melange",
+                "createOrEditLabel": "Créer ou éditer un Taux Melange"
+            },
+            "created": "Un nouveau Taux Melange a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Taux Melange avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Taux Melange avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Taux Melange {{ id }} ?"
+            },
+            "detail": {
+                "title": "Taux Melange"
+            },
+            "tauxMelange": "Taux Melange",
+            "prixMelange": "Prix Melange",
+            "tauxEnCours": "Taux En Cours"
+        }
+    }
+}

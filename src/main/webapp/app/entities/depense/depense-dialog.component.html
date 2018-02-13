@@ -1,0 +1,80 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myDepenseLabel" jhiTranslate="epetrolstationbackendApp.depense.home.createOrEditLabel">Create or edit a Depense</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!depense.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="depense.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.depense.date" for="field_date">Date</label>
+            <div class="d-flex">
+                <input id="field_date" type="datetime-local" class="form-control" name="date" [(ngModel)]="depense.date"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.depense.code" for="field_code">Code</label>
+            <input type="text" class="form-control" name="code" id="field_code"
+                [(ngModel)]="depense.code" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.depense.designation" for="field_designation">Designation</label>
+            <input type="text" class="form-control" name="designation" id="field_designation"
+                [(ngModel)]="depense.designation" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.depense.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                [(ngModel)]="depense.description" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.depense.montant" for="field_montant">Montant</label>
+            <input type="number" class="form-control" name="montant" id="field_montant"
+                [(ngModel)]="depense.montant" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.depense.hastresro" for="field_hastresro">Hastresro</label>
+            <select class="form-control" id="field_hastresro" name="hastresro" [(ngModel)]="depense.hastresroId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tresorerieOption.id" *ngFor="let tresorerieOption of hastresros; trackBy: trackTresorerieById">{{tresorerieOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.depense.hasinterv" for="field_hasinterv">Hasinterv</label>
+            <select class="form-control" id="field_hasinterv" name="hasinterv" [(ngModel)]="depense.hasintervId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="intervenantOption.id" *ngFor="let intervenantOption of hasintervs; trackBy: trackIntervenantById">{{intervenantOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.depense.use" for="field_use">Use</label>
+            <select class="form-control" id="field_use" name="use" [(ngModel)]="depense.useId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="categorieDepenseOption.id" *ngFor="let categorieDepenseOption of uses; trackBy: trackCategorieDepenseById">{{categorieDepenseOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.depense.has" for="field_has">Has</label>
+            <select class="form-control" id="field_has" name="has" [(ngModel)]="depense.hasId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="modeReglementOption.id" *ngFor="let modeReglementOption of have; trackBy: trackModeReglementById">{{modeReglementOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

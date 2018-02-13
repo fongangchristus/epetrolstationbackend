@@ -1,0 +1,60 @@
+<div>
+    <h2>
+        <span jhiTranslate="epetrolstationbackendApp.categorieDepense.home.title">Categorie Depenses</span>
+        <button class="btn btn-primary float-right jh-create-entity create-categorie-depense" [routerLink]="['/', { outlets: { popup: ['categorie-depense-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="epetrolstationbackendApp.categorieDepense.home.createLabel">
+            Create new Categorie Depense
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="categorieDepenses">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.categorieDepense.libele">Libele</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.categorieDepense.description">Description</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let categorieDepense of categorieDepenses ;trackBy: trackId">
+                <td><a [routerLink]="['../categorie-depense', categorieDepense.id ]">{{categorieDepense.id}}</a></td>
+                <td>{{categorieDepense.libele}}</td>
+                <td>{{categorieDepense.description}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../categorie-depense', categorieDepense.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'categorie-depense/'+ categorieDepense.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'categorie-depense/'+ categorieDepense.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
