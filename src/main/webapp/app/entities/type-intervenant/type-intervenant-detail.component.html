@@ -1,0 +1,30 @@
+
+<div *ngIf="typeIntervenant">
+    <h2><span jhiTranslate="epetrolstationbackendApp.typeIntervenant.detail.title">Type Intervenant</span> {{typeIntervenant.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="epetrolstationbackendApp.typeIntervenant.libele">Libele</span></dt>
+        <dd>
+            <span>{{typeIntervenant.libele}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.typeIntervenant.description">Description</span></dt>
+        <dd>
+            <span>{{typeIntervenant.description}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'type-intervenant/'+ typeIntervenant.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

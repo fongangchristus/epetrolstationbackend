@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "hasciterne",
+            "otherEntityName": "citerne",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "entreeCiterne"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "hasunite",
+            "otherEntityName": "unite",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "entreeCiterne"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "hasi",
+            "otherEntityName": "intervenant",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "entreeCiterne"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "valeurMax",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valeurActuel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "quantite",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180213190304",
+    "entityTableName": "entree_citerne",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

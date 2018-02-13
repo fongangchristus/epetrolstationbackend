@@ -1,0 +1,28 @@
+
+{
+    "epetrolstationbackendApp": {
+        "pompe" : {
+            "home": {
+                "title": "Pompes",
+                "createLabel": "Créer un nouveau Pompe",
+                "createOrEditLabel": "Créer ou éditer un Pompe"
+            },
+            "created": "Un nouveau Pompe a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Pompe avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Pompe avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Pompe {{ id }} ?"
+            },
+            "detail": {
+                "title": "Pompe"
+            },
+            "nbChiffre": "Nb Chiffre",
+            "cInit": "C Init",
+            "melange": "Melange",
+            "hasci": "Hasci",
+            "hasre": "Hasre",
+            "hasta": "Hasta",
+            "hasca": "Hasca"
+        }
+    }
+}

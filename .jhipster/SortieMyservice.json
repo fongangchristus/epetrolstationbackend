@@ -1,0 +1,65 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "serv",
+            "otherEntityName": "myservice",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "sortieMyservice"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "hasinter",
+            "otherEntityName": "intervenant",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "sortieMyservice"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "hasModeR",
+            "otherEntityName": "modeReglement",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "sortieMyservice"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "hastresor",
+            "otherEntityName": "tresorerie",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "sortieMyservice"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "hastre",
+            "otherEntityName": "tresorerie",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "sortieMyservice"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "prixTotalht",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "prixTTC",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20180213190306",
+    "entityTableName": "sortie_myservice",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

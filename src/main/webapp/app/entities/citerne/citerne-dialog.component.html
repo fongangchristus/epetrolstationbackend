@@ -1,0 +1,56 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myCiterneLabel" jhiTranslate="epetrolstationbackendApp.citerne.home.createOrEditLabel">Create or edit a Citerne</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!citerne.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="citerne.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.citerne.volumeInit" for="field_volumeInit">Volume Init</label>
+            <input type="text" class="form-control" name="volumeInit" id="field_volumeInit"
+                [(ngModel)]="citerne.volumeInit" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.citerne.volumeMax" for="field_volumeMax">Volume Max</label>
+            <input type="text" class="form-control" name="volumeMax" id="field_volumeMax"
+                [(ngModel)]="citerne.volumeMax" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.citerne.hasc" for="field_hasc">Hasc</label>
+            <select class="form-control" id="field_hasc" name="hasc" [(ngModel)]="citerne.hascId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="catCarburantOption.id" *ngFor="let catCarburantOption of hascs; trackBy: trackCatCarburantById">{{catCarburantOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.citerne.hasu" for="field_hasu">Hasu</label>
+            <select class="form-control" id="field_hasu" name="hasu" [(ngModel)]="citerne.hasuId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="uniteOption.id" *ngFor="let uniteOption of hasus; trackBy: trackUniteById">{{uniteOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.citerne.hai" for="field_hai">Hai</label>
+            <select class="form-control" id="field_hai" name="hai" [(ngModel)]="citerne.haiId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="stationOption.id" *ngFor="let stationOption of hais; trackBy: trackStationById">{{stationOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,48 @@
+
+<div *ngIf="carburant">
+    <h2><span jhiTranslate="epetrolstationbackendApp.carburant.detail.title">Carburant</span> {{carburant.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="epetrolstationbackendApp.carburant.designation">Designation</span></dt>
+        <dd>
+            <span>{{carburant.designation}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.carburant.soldeInit">Solde Init</span></dt>
+        <dd>
+            <span>{{carburant.soldeInit}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.carburant.prixAchat">Prix Achat</span></dt>
+        <dd>
+            <span>{{carburant.prixAchat}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.carburant.prixVente">Prix Vente</span></dt>
+        <dd>
+            <span>{{carburant.prixVente}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.carburant.reference">Reference</span></dt>
+        <dd>
+            <span>{{carburant.reference}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.carburant.catCarburant">Cat Carburant</span></dt>
+        <dd>
+            <div *ngIf="carburant.catCarburantId">
+                <a [routerLink]="['/cat-carburant', carburant.catCarburantId]">{{carburant.catCarburantId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'carburant/'+ carburant.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

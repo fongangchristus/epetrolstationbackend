@@ -1,0 +1,27 @@
+
+{
+    "epetrolstationbackendApp": {
+        "carburant" : {
+            "home": {
+                "title": "Carburants",
+                "createLabel": "Créer un nouveau Carburant",
+                "createOrEditLabel": "Créer ou éditer un Carburant"
+            },
+            "created": "Un nouveau Carburant a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Carburant avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Carburant avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Carburant {{ id }} ?"
+            },
+            "detail": {
+                "title": "Carburant"
+            },
+            "designation": "Designation",
+            "soldeInit": "Solde Init",
+            "prixAchat": "Prix Achat",
+            "prixVente": "Prix Vente",
+            "reference": "Reference",
+            "catCarburant": "Cat Carburant"
+        }
+    }
+}

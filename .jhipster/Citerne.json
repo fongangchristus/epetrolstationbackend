@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "hasc",
+            "otherEntityName": "catCarburant",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "citerne"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "hasu",
+            "otherEntityName": "unite",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "citerne"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "hai",
+            "otherEntityName": "station",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "citerne"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "volumeInit",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "volumeMax",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180213190303",
+    "entityTableName": "citerne",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

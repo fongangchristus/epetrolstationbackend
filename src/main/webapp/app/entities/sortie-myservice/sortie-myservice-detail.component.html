@@ -1,0 +1,64 @@
+
+<div *ngIf="sortieMyservice">
+    <h2><span jhiTranslate="epetrolstationbackendApp.sortieMyservice.detail.title">Sortie Myservice</span> {{sortieMyservice.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieMyservice.date">Date</span></dt>
+        <dd>
+            <span>{{sortieMyservice.date | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieMyservice.prixTotalht">Prix Totalht</span></dt>
+        <dd>
+            <span>{{sortieMyservice.prixTotalht}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieMyservice.prixTTC">Prix TTC</span></dt>
+        <dd>
+            <span>{{sortieMyservice.prixTTC}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieMyservice.serv">Serv</span></dt>
+        <dd>
+            <div *ngIf="sortieMyservice.servId">
+                <a [routerLink]="['/myservice', sortieMyservice.servId]">{{sortieMyservice.servId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieMyservice.hasinter">Hasinter</span></dt>
+        <dd>
+            <div *ngIf="sortieMyservice.hasinterId">
+                <a [routerLink]="['/intervenant', sortieMyservice.hasinterId]">{{sortieMyservice.hasinterId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieMyservice.hasModeR">Has Mode R</span></dt>
+        <dd>
+            <div *ngIf="sortieMyservice.hasModeRId">
+                <a [routerLink]="['/mode-reglement', sortieMyservice.hasModeRId]">{{sortieMyservice.hasModeRId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieMyservice.hastresor">Hastresor</span></dt>
+        <dd>
+            <div *ngIf="sortieMyservice.hastresorId">
+                <a [routerLink]="['/tresorerie', sortieMyservice.hastresorId]">{{sortieMyservice.hastresorId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieMyservice.hastre">Hastre</span></dt>
+        <dd>
+            <div *ngIf="sortieMyservice.hastreId">
+                <a [routerLink]="['/tresorerie', sortieMyservice.hastreId]">{{sortieMyservice.hastreId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'sortie-myservice/'+ sortieMyservice.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

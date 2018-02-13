@@ -1,0 +1,79 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myProduitLabel" jhiTranslate="epetrolstationbackendApp.produit.home.createOrEditLabel">Create or edit a Produit</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!produit.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="produit.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.produit.designation" for="field_designation">Designation</label>
+            <input type="text" class="form-control" name="designation" id="field_designation"
+                [(ngModel)]="produit.designation" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.produit.soldeInit" for="field_soldeInit">Solde Init</label>
+            <input type="number" class="form-control" name="soldeInit" id="field_soldeInit"
+                [(ngModel)]="produit.soldeInit" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.produit.prixAchat" for="field_prixAchat">Prix Achat</label>
+            <input type="number" class="form-control" name="prixAchat" id="field_prixAchat"
+                [(ngModel)]="produit.prixAchat" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.produit.prixVente" for="field_prixVente">Prix Vente</label>
+            <input type="number" class="form-control" name="prixVente" id="field_prixVente"
+                [(ngModel)]="produit.prixVente" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.produit.quantiteDispo" for="field_quantiteDispo">Quantite Dispo</label>
+            <input type="number" class="form-control" name="quantiteDispo" id="field_quantiteDispo"
+                [(ngModel)]="produit.quantiteDispo" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.produit.quantiteInit" for="field_quantiteInit">Quantite Init</label>
+            <input type="number" class="form-control" name="quantiteInit" id="field_quantiteInit"
+                [(ngModel)]="produit.quantiteInit" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.produit.seuilReaprov" for="field_seuilReaprov">Seuil Reaprov</label>
+            <input type="number" class="form-control" name="seuilReaprov" id="field_seuilReaprov"
+                [(ngModel)]="produit.seuilReaprov" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.produit.reference" for="field_reference">Reference</label>
+            <input type="number" class="form-control" name="reference" id="field_reference"
+                [(ngModel)]="produit.reference" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.produit.tva" for="field_tva">Tva</label>
+            <select class="form-control" id="field_tva" name="tva" [(ngModel)]="produit.tvaId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tvaOption.id" *ngFor="let tvaOption of tvas; trackBy: trackTvaById">{{tvaOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="epetrolstationbackendApp.produit.categorie" for="field_categorie">Categorie</label>
+            <select class="form-control" id="field_categorie" name="categorie" [(ngModel)]="produit.categorieId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="categorieOption.id" *ngFor="let categorieOption of categories; trackBy: trackCategorieById">{{categorieOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

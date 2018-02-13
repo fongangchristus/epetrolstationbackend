@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "has",
+            "otherEntityName": "carburant",
+            "otherEntityRelationshipName": "catCarburant"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "libele",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180213190251",
+    "entityTableName": "cat_carburant",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

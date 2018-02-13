@@ -1,0 +1,60 @@
+<div>
+    <h2>
+        <span jhiTranslate="epetrolstationbackendApp.typeIntervenant.home.title">Type Intervenants</span>
+        <button class="btn btn-primary float-right jh-create-entity create-type-intervenant" [routerLink]="['/', { outlets: { popup: ['type-intervenant-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="epetrolstationbackendApp.typeIntervenant.home.createLabel">
+            Create new Type Intervenant
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="typeIntervenants">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.typeIntervenant.libele">Libele</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.typeIntervenant.description">Description</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let typeIntervenant of typeIntervenants ;trackBy: trackId">
+                <td><a [routerLink]="['../type-intervenant', typeIntervenant.id ]">{{typeIntervenant.id}}</a></td>
+                <td>{{typeIntervenant.libele}}</td>
+                <td>{{typeIntervenant.description}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../type-intervenant', typeIntervenant.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'type-intervenant/'+ typeIntervenant.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'type-intervenant/'+ typeIntervenant.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

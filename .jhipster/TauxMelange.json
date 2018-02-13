@@ -1,0 +1,24 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "tauxMelange",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "prixMelange",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "tauxEnCours",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20180213190311",
+    "entityTableName": "taux_melange",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

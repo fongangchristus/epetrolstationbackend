@@ -1,0 +1,26 @@
+
+{
+    "epetrolstationbackendApp": {
+        "citerne" : {
+            "home": {
+                "title": "Citernes",
+                "createLabel": "Créer un nouveau Citerne",
+                "createOrEditLabel": "Créer ou éditer un Citerne"
+            },
+            "created": "Un nouveau Citerne a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Citerne avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Citerne avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Citerne {{ id }} ?"
+            },
+            "detail": {
+                "title": "Citerne"
+            },
+            "volumeInit": "Volume Init",
+            "volumeMax": "Volume Max",
+            "hasc": "Hasc",
+            "hasu": "Hasu",
+            "hai": "Hai"
+        }
+    }
+}

@@ -1,0 +1,83 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "entreeProduit",
+            "otherEntityName": "entreeProduit",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "entreeCarburant",
+            "otherEntityName": "entreeCarburant",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "manager",
+            "otherEntityName": "intervenant",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "intervenant"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "typeIntervenant",
+            "otherEntityName": "typeIntervenant",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "intervenant"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "is",
+            "otherEntityName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "intervenant"
+        },
+        {
+            "relationshipName": "station",
+            "otherEntityName": "station",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "imageFile",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nomComplet",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fonction",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cni",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "addresse",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soldeInit",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180213190257",
+    "entityTableName": "intervenant",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false
+}

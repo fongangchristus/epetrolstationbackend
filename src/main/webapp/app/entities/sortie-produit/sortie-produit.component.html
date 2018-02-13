@@ -1,0 +1,90 @@
+<div>
+    <h2>
+        <span jhiTranslate="epetrolstationbackendApp.sortieProduit.home.title">Sortie Produits</span>
+        <button class="btn btn-primary float-right jh-create-entity create-sortie-produit" [routerLink]="['/', { outlets: { popup: ['sortie-produit-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="epetrolstationbackendApp.sortieProduit.home.createLabel">
+            Create new Sortie Produit
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="sortieProduits">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieProduit.date">Date</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieProduit.motif">Motif</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieProduit.prixTotalht">Prix Totalht</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieProduit.quantite">Quantite</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieProduit.prixTTC">Prix TTC</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieProduit.modeReg">Mode Reg</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieProduit.client">Client</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieProduit.tresor">Tresor</span></th>
+            <th><span jhiTranslate="epetrolstationbackendApp.sortieProduit.prod">Prod</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sortieProduit of sortieProduits ;trackBy: trackId">
+                <td><a [routerLink]="['../sortie-produit', sortieProduit.id ]">{{sortieProduit.id}}</a></td>
+                <td>{{sortieProduit.date | date:'medium'}}</td>
+                <td>{{sortieProduit.motif}}</td>
+                <td>{{sortieProduit.prixTotalht}}</td>
+                <td>{{sortieProduit.quantite}}</td>
+                <td>{{sortieProduit.prixTTC}}</td>
+                <td>
+                    <div *ngIf="sortieProduit.modeRegId">
+                        <a [routerLink]="['../mode-reglement', sortieProduit.modeRegId  ]" >{{sortieProduit.modeRegId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sortieProduit.clientId">
+                        <a [routerLink]="['../intervenant', sortieProduit.clientId  ]" >{{sortieProduit.clientId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sortieProduit.tresorId">
+                        <a [routerLink]="['../tresorerie', sortieProduit.tresorId  ]" >{{sortieProduit.tresorId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sortieProduit.prodId">
+                        <a [routerLink]="['../produit', sortieProduit.prodId  ]" >{{sortieProduit.prodId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../sortie-produit', sortieProduit.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sortie-produit/'+ sortieProduit.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sortie-produit/'+ sortieProduit.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

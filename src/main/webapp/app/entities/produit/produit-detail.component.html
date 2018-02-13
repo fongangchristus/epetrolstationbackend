@@ -1,0 +1,66 @@
+
+<div *ngIf="produit">
+    <h2><span jhiTranslate="epetrolstationbackendApp.produit.detail.title">Produit</span> {{produit.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="epetrolstationbackendApp.produit.designation">Designation</span></dt>
+        <dd>
+            <span>{{produit.designation}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.produit.soldeInit">Solde Init</span></dt>
+        <dd>
+            <span>{{produit.soldeInit}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.produit.prixAchat">Prix Achat</span></dt>
+        <dd>
+            <span>{{produit.prixAchat}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.produit.prixVente">Prix Vente</span></dt>
+        <dd>
+            <span>{{produit.prixVente}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.produit.quantiteDispo">Quantite Dispo</span></dt>
+        <dd>
+            <span>{{produit.quantiteDispo}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.produit.quantiteInit">Quantite Init</span></dt>
+        <dd>
+            <span>{{produit.quantiteInit}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.produit.seuilReaprov">Seuil Reaprov</span></dt>
+        <dd>
+            <span>{{produit.seuilReaprov}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.produit.reference">Reference</span></dt>
+        <dd>
+            <span>{{produit.reference}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.produit.tva">Tva</span></dt>
+        <dd>
+            <div *ngIf="produit.tvaId">
+                <a [routerLink]="['/tva', produit.tvaId]">{{produit.tvaId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.produit.categorie">Categorie</span></dt>
+        <dd>
+            <div *ngIf="produit.categorieId">
+                <a [routerLink]="['/categorie', produit.categorieId]">{{produit.categorieId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'produit/'+ produit.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

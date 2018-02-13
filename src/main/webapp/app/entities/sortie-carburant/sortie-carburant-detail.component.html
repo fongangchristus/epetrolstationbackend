@@ -1,0 +1,76 @@
+
+<div *ngIf="sortieCarburant">
+    <h2><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.detail.title">Sortie Carburant</span> {{sortieCarburant.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.date">Date</span></dt>
+        <dd>
+            <span>{{sortieCarburant.date | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.prixTotalht">Prix Totalht</span></dt>
+        <dd>
+            <span>{{sortieCarburant.prixTotalht}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.quantite">Quantite</span></dt>
+        <dd>
+            <span>{{sortieCarburant.quantite}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.quantiteINit">Quantite I Nit</span></dt>
+        <dd>
+            <span>{{sortieCarburant.quantiteINit}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.quantiteFinal">Quantite Final</span></dt>
+        <dd>
+            <span>{{sortieCarburant.quantiteFinal}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.prixTTC">Prix TTC</span></dt>
+        <dd>
+            <span>{{sortieCarburant.prixTTC}}</span>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.inter">Inter</span></dt>
+        <dd>
+            <div *ngIf="sortieCarburant.interId">
+                <a [routerLink]="['/intervenant', sortieCarburant.interId]">{{sortieCarburant.interId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.carb">Carb</span></dt>
+        <dd>
+            <div *ngIf="sortieCarburant.carbId">
+                <a [routerLink]="['/carburant', sortieCarburant.carbId]">{{sortieCarburant.carbId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.pomp">Pomp</span></dt>
+        <dd>
+            <div *ngIf="sortieCarburant.pompId">
+                <a [routerLink]="['/pompe', sortieCarburant.pompId]">{{sortieCarburant.pompId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.mode">Mode</span></dt>
+        <dd>
+            <div *ngIf="sortieCarburant.modeId">
+                <a [routerLink]="['/mode-reglement', sortieCarburant.modeId]">{{sortieCarburant.modeId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="epetrolstationbackendApp.sortieCarburant.tres">Tres</span></dt>
+        <dd>
+            <div *ngIf="sortieCarburant.tresId">
+                <a [routerLink]="['/tresorerie', sortieCarburant.tresId]">{{sortieCarburant.tresId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'sortie-carburant/'+ sortieCarburant.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
